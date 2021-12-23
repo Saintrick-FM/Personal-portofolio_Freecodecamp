@@ -1,10 +1,10 @@
 :root {
     --myGradient: radial-gradient(65% 100% at 50% 0%, #00FF94 0%, rgba(0, 255, 148, 0.25) 100%), linear-gradient(230deg, #000000 25%, #170059 100%), linear-gradient(215deg, #FFEBB9 10%, #19004E 80%), radial-gradient(100% 245% at 100% 100%, #FFFFFF 0%, #000353 100%), linear-gradient(125deg, #1400FF 0%, #3A0000 100%), linear-gradient(225deg, #00F0FF 30%, #000B6F 45%, #00EBFC 45%, #001676 65%, #00E1F6 65%, #001676 85%, #00ECFD 85%, #001676 100%), linear-gradient(135deg, #00F0FF 0%, #000B6F 15%, #00EBFC 15%, #001676 35%, #00E1F6 35%, #001676 55%, #00ECFD 55%, #001676 100%);
     --myOriginalGradient: radial-gradient(65% 100% at 50% 0%, #00FF94 0%, rgba(0, 255, 148, 0.25) 100%), linear-gradient( 230deg, #000000 25%, #170059 100%), linear-gradient( 215deg, #FFEBB9 10%, #19004E 80%), radial-gradient(100% 245% at 100% 100%, #FFFFFF 0%, #000353 100%), linear-gradient( 125deg, #1400FF 0%, #3A0000 100%), linear-gradient( 225deg, rgba(0, 240, 255, 0.2) 30%, #000B6F 45%, #00EBFC 45%, #001676 65%, #00E1F6 65%, #001676 85%, #00ECFD 85%, #001676 100%), linear-gradient( 135deg, #00F0FF 0%, #000B6F 15%, #00EBFC 15%, #001676 35%, #00E1F6 35%, #001676 55%, #00ECFD 55%, #001676 100%);
-    --header-bg: #E9F6FC;
+    --header-bg: rgb(233, 246, 252);
     --marron_header_bg: rgb(251, 244, 244);
     --buttonColor: rgb(252, 174, 23);
-    --headerAnchors: #061F48;
+    --headerAnchors: rgb(6, 31, 72);
 }
 
 @font-face {
@@ -72,7 +72,7 @@ header {
 }
 
 .nav__items h3 {
-    width: 40%;
+    width: 20%;
     color: var(--headerAnchors);
 }
 
@@ -82,7 +82,7 @@ header {
     text-transform: capitalize;
     position: relative;
     color: var(--headerAnchors);
-    margin: 0 20px;
+    margin: 0 10px;
 }
 
 .nav__links a:first-child {
@@ -142,12 +142,10 @@ main {
     top: 70px;
     right: 0;
     left: 0;
-    /* padding-top: 20px; */
     background-size: 400%;
     height: 100vh;
     min-height: 100%;
     background: var(--myGradient);
-    /**/
     background-size: 400%;
     animation: bg-animation 30s infinite alternate;
 }
@@ -198,7 +196,35 @@ h1[class="myName"] {
     }
 }
 
-@media screen and (max-width:650px) {
+@media screen and (max-width:315.99px) {
+    .nav__items h3 {
+        font-size: 15px;
+        width: 50%;
+    }
+}
+
+@media screen and (min-width:681px) and (max-width:900px) {
+    .nav__links a:first-child {
+        color: var(--buttonColor);
+        padding-right: 0px;
+    }
+    a[class="link"] {
+        margin: 0 10px;
+        width: fit-content;
+    }
+    .nav__items {
+        width: 100%;
+    }
+    .contact-me {
+        position: absolute;
+        right: 6px;
+    }
+    .logo {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width:680px) {
     header {
         position: fixed;
         width: 100%;
@@ -208,10 +234,13 @@ h1[class="myName"] {
         right: 0;
         border-top-left-radius: 0;
         border-top-right-radius: 0;
-        /*  */
+    }
+    .nav__items h3 {
+        width: 60%;
+        font-size: 18px;
     }
     .nav__items {
-        position: absolute;
+        position: relative;
         top: 0;
         left: 0;
         right: 0;
@@ -237,6 +266,7 @@ h1[class="myName"] {
         position: relative;
         transition: transform 250ms ease-in;
         margin: 0 20px 0 20px;
+        z-index: 99;
     }
     .burger-bars {
         width: 30px;
@@ -278,7 +308,79 @@ h1[class="myName"] {
         transform: rotate(-45deg) translate(35px, 35px);
     }
     /*****************   Animation *********************/
+    /*****************   Mobile menu *********************/
+    .nav__links.active,
+    .nav__links.desactivate {
+        display: flex;
+        position: absolute;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: flex-start;
+        top: 0;
+        right: -5px;
+        height: 300px;
+        width: 60%;
+        list-style: none;
+        /* background-color: rgb(0 0 0 / 80%); */
+        background: radial-gradient(ellipse farthest-side at 76% 77%, rgba(245, 228, 212, 0.25) 4%, rgba(255, 255, 255, 0) calc(4% + 1px)), radial-gradient(circle at 76% 40%, rgba(254, 246, 236, 0.2) 4%, rgba(255, 255, 255, 0) 4.18%), linear-gradient(135deg, rgba(255, 0, 0, 0.2) 0%, rgba(0, 0, 54, 0.2) 100%), radial-gradient(ellipse at 28% 0%, rgba(255, 207, 172, 0.8) 0%, rgba(98, 149, 144, 0.8) 100%), linear-gradient(180deg, rgba(175, 167, 170, 0.8) 0%, rgba(245, 234, 176, 0.7) 69%, rgba(214, 200, 162, 0.8) 70%, rgba(162, 117, 141, 1) 100%);
+        background-blend-mode: normal, normal, screen, overlay, normal;
+        border-right: none;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+        z-index: 98;
+    }
+    .nav__links.active {
+        opacity: 0;
+        animation: scroll-open-menu 1s ease-in-out forwards;
+    }
+    .nav__links.desactivate {
+        opacity: 1;
+        animation: scroll-close-menu 1s ease-in-out forwards;
+    }
+    @keyframes scroll-open-menu {
+        0% {
+            opacity: 0.1;
+            transform: translateX(100%);
+        }
+        40% {
+            transform: translateX(-10%);
+        }
+        80% {
+            transform: translateX(0%);
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(-2%);
+        }
+    }
+    @keyframes scroll-close-menu {
+        0% {
+            opacity: 1;
+            transform: translateX(-10%);
+        }
+        40% {
+            transform: translateX(0%);
+        }
+        80% {
+            transform: translateX(-10%);
+        }
+        100% {
+            opacity: 0;
+            transform: translateX(100%);
+        }
+    }
+    /************** About me ******************/
     .aboutMe {
         padding: 20px 15px 0 15px;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .aboutMe {
+        padding: 20px 5px 0 5px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0;
     }
 }
