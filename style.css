@@ -1,10 +1,11 @@
 :root {
     --myGradient: radial-gradient(65% 100% at 50% 0%, #00FF94 0%, rgba(0, 255, 148, 0.25) 100%), linear-gradient(230deg, #000000 25%, #170059 100%), linear-gradient(215deg, #FFEBB9 10%, #19004E 80%), radial-gradient(100% 245% at 100% 100%, #FFFFFF 0%, #000353 100%), linear-gradient(125deg, #1400FF 0%, #3A0000 100%), linear-gradient(225deg, #00F0FF 30%, #000B6F 45%, #00EBFC 45%, #001676 65%, #00E1F6 65%, #001676 85%, #00ECFD 85%, #001676 100%), linear-gradient(135deg, #00F0FF 0%, #000B6F 15%, #00EBFC 15%, #001676 35%, #00E1F6 35%, #001676 55%, #00ECFD 55%, #001676 100%);
     --myOriginalGradient: radial-gradient(65% 100% at 50% 0%, #00FF94 0%, rgba(0, 255, 148, 0.25) 100%), linear-gradient( 230deg, #000000 25%, #170059 100%), linear-gradient( 215deg, #FFEBB9 10%, #19004E 80%), radial-gradient(100% 245% at 100% 100%, #FFFFFF 0%, #000353 100%), linear-gradient( 125deg, #1400FF 0%, #3A0000 100%), linear-gradient( 225deg, rgba(0, 240, 255, 0.2) 30%, #000B6F 45%, #00EBFC 45%, #001676 65%, #00E1F6 65%, #001676 85%, #00ECFD 85%, #001676 100%), linear-gradient( 135deg, #00F0FF 0%, #000B6F 15%, #00EBFC 15%, #001676 35%, #00E1F6 35%, #001676 55%, #00ECFD 55%, #001676 100%);
-    --header-bg: rgb(233, 246, 252);
-    --marron_header_bg: rgb(251, 244, 244);
-    --buttonColor: rgb(252, 174, 23);
-    --headerAnchors: rgb(6, 31, 72);
+    --header-bg: #e9f6fc;
+    --marron_header_bg: rgb(250, 201, 201);
+    --buttonColor: #fcae17;
+    --headerAnchors: #061f48;
+    /* --headerAnchors: #161623; */
 }
 
 @font-face {
@@ -76,6 +77,11 @@ header {
     color: var(--headerAnchors);
 }
 
+img {
+    height: 65px;
+    width: 60px;
+}
+
 .nav__links a {
     text-decoration: none;
     font-weight: 800;
@@ -138,25 +144,53 @@ a {
 }
 
 main {
-    position: absolute;
+    position: relative;
     top: 70px;
     right: 0;
     left: 0;
-    background-size: 400%;
+    height: 400vh;
+    /* background-size: 400%;
     height: 100vh;
     min-height: 100%;
-    background: var(--myGradient);
-    background-size: 400%;
-    animation: bg-animation 30s infinite alternate;
+     background: var(--myGradient); 
+    background-size: 400%;*/
+    overflow: hidden;
+    /* animation: bg-animation 30s infinite alternate; */
 }
 
-.aboutMe {
-    display: flex;
+
+/****************Welcome section *****************/
+
+#welcome-section {
+    /* display: flex;
+    flex-direction: column; */
     width: 100%;
-    padding: 0 30px;
+    height: 100vh;
+    position: relative;
+    align-items: flex-start;
+    justify-content: space-between;
     background-color: var(--header-bg);
+    position: relative;
+}
+
+.welcome {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    align-items: flex-start;
+    justify-content: center;
     color: var(--headerAnchors);
-    height: 300px;
+    height: 70vh;
+    width: 100%;
+    z-index: 95;
+    border-bottom: solid 10px var(--headerAnchors);
+    border-bottom-left-radius: 20%;
+    border-bottom-right-radius: 20%;
+    box-shadow: -85px 10px 0px 125px var(--headerAnchors);
+}
+
+.text-aboutMe h3 {
+    padding: 20px 0 0 2vw;
 }
 
 .text-aboutMe {
@@ -164,27 +198,197 @@ main {
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    width: 50%;
+    width: 88vw;
+    padding: 30px 0 0 40px;
+    height: auto;
+    position: absolute;
+    left: 0;
+    top: 80px;
+    right: 0;
+    bottom: 30%;
 }
 
 .text-aboutMe button:last-child {
     margin: 30px 0 0 0;
     left: 0;
-    padding-left: 0;
-}
-
-.text-aboutMe p {
-    padding: 20px 0 0 2px;
+    padding: 20px;
 }
 
 h1[class="myName"] {
     color: var(--buttonColor);
-    margin: 0;
-    padding: 0;
+    display: inline;
+    /* overflow: hidden;*/
+    position: relative;
+    font-size: 3.8vw;
+}
+
+h1[class="hy"] {
+    font-size: 4.5vw;
 }
 
 .illustration-aboutMe {
-    width: 50%;
+    display: block;
+    width: 35%;
+    height: auto;
+    position: absolute;
+    top: 10px;
+    right: 5vw;
+    bottom: 0;
+}
+
+.para {
+    z-index: 10;
+    color: white;
+}
+
+.orange-blob,
+.blue-blob {
+    top: 10px;
+    right: -10px;
+    bottom: 0;
+    position: absolute;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+}
+
+.aboutMe_img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+}
+
+.blue-blob {
+    z-index: -2;
+    transform: rotate(-60deg);
+}
+
+.orange-blob {
+    z-index: -1;
+}
+
+.moreAboutMe_section {
+    position: relative;
+    padding: 0 60px;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    align-items: flex-start;
+    justify-content: flex-start;
+    height: 500px;
+    width: 100%;
+    top: 75vh;
+    background: var(--headerAnchors);
+    box-shadow: -10px -10px 0px 29px var(--headerAnchors);
+}
+
+.moreAboutMe {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: max-content;
+    align-items: center;
+    justify-content: center;
+    z-index: 96;
+    /*************Glassmorphism*****************/
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    border-top: 1px solid rgb(255, 255, 255, 0.5);
+    border-left: 1px solid rgb(255, 255, 255, 0.5);
+    overflow: hidden;
+    /*************Glassmorphism*****************/
+    padding: 10px 0;
+}
+
+.moreAboutMe_title {
+    color: var(--buttonColor);
+    margin: 0 auto;
+    margin-bottom: 20px;
+    font-size: 3vw;
+    z-index: 96;
+    border-bottom: dashed;
+}
+
+
+/*
+.moreAboutMe_title::after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: .5px;
+    border: #000353;
+    z-index: 6;
+    background: var(--buttonColor);
+    padding-top: 10px;
+    right: 45vw;
+    width: 10vw;
+}*/
+
+.moreAboutMe_details {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    padding: 20px;
+    font-size: 17px;
+}
+
+.moreAboutMe_img {
+    width: 20%;
+    padding-left: 20px;
+}
+
+.image {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+}
+
+@media screen and (max-width:600px) {
+    /*.text-aboutMe h3 {
+        padding: 5px 0 0 2px;
+    }*/
+    .moreAboutMe_section {
+        padding: 0 20px;
+        height: max-content;
+    }
+    .moreAboutMe {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: small;
+    }
+    .moreAboutMe_img {
+        height: auto;
+        width: auto;
+        margin: 0 auto;
+    }
+    .image {
+        height: 200px;
+        width: 200px;
+    }
+    .moreAboutMe_details {
+        width: 100%;
+        padding: 10px;
+        text-align: justify;
+    }
+    .text-aboutMe {
+        text-align: start;
+        /* margin: 10px 0 0 30%; */
+    }
+}
+
+.hightlights {
+    margin-top: 20px;
+}
+
+.list {
+    padding-left: 50px;
 }
 
 @keyframes bg-animation {
@@ -215,10 +419,10 @@ h1[class="myName"] {
     .nav__items {
         width: 100%;
     }
-    .contact-me {
+    /*.contact-me {
         position: absolute;
         right: 6px;
-    }
+    }*/
     .logo {
         font-size: 15px;
     }
@@ -369,18 +573,5 @@ h1[class="myName"] {
             transform: translateX(100%);
         }
     }
-    /************** About me ******************/
-    .aboutMe {
-        padding: 20px 15px 0 15px;
-    }
-}
-
-@media screen and (max-width: 420px) {
-    .aboutMe {
-        padding: 20px 5px 0 5px;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-        margin: 0;
-    }
+    /************** Welcome section  ******************/
 }
