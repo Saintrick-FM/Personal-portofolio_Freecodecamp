@@ -1,9 +1,9 @@
 :root {
     --myGradient: radial-gradient(65% 100% at 50% 0%, #00FF94 0%, rgba(0, 255, 148, 0.25) 100%), linear-gradient(230deg, #000000 25%, #170059 100%), linear-gradient(215deg, #FFEBB9 10%, #19004E 80%), radial-gradient(100% 245% at 100% 100%, #FFFFFF 0%, #000353 100%), linear-gradient(125deg, #1400FF 0%, #3A0000 100%), linear-gradient(225deg, #00F0FF 30%, #000B6F 45%, #00EBFC 45%, #001676 65%, #00E1F6 65%, #001676 85%, #00ECFD 85%, #001676 100%), linear-gradient(135deg, #00F0FF 0%, #000B6F 15%, #00EBFC 15%, #001676 35%, #00E1F6 35%, #001676 55%, #00ECFD 55%, #001676 100%);
-    --myOriginalGradient: radial-gradient(65% 100% at 50% 0%, #00FF94 0%, rgba(0, 255, 148, 0.25) 100%), linear-gradient( 230deg, #000000 25%, #170059 100%), linear-gradient( 215deg, #FFEBB9 10%, #19004E 80%), radial-gradient(100% 245% at 100% 100%, #FFFFFF 0%, #000353 100%), linear-gradient( 125deg, #1400FF 0%, #3A0000 100%), linear-gradient( 225deg, rgba(0, 240, 255, 0.2) 30%, #000B6F 45%, #00EBFC 45%, #001676 65%, #00E1F6 65%, #001676 85%, #00ECFD 85%, #001676 100%), linear-gradient( 135deg, #00F0FF 0%, #000B6F 15%, #00EBFC 15%, #001676 35%, #00E1F6 35%, #001676 55%, #00ECFD 55%, #001676 100%);
+    --myOriginalGradient: radial-gradient(65% 100% at 50% 0%, #00FF94 0%, rgba(0, 255, 148, 0.25) 100%), linear-gradient( 230deg, #000000 25%, #170059 100%), linear-gradient( 215deg, #FFEBB9 10%, #19004E 80%), radial-gradient(100% 245% at 100% 100%, #FFFFFF 0%, #000353 100%), linear-gradient( 125deg, #1400FF 0%, #3A0000 100%), linear-gradient( 225deg, rgba(0, 240, 255, 0.2) 30%, #000B6F 45%, #00EBFC 45%, #001676 65%, #00E1F6 65%, #001676 85%, #00ECFD 85%, #7e808a 100%), linear-gradient( 135deg, #00F0FF 0%, #000B6F 15%, #00EBFC 15%, #001676 35%, #00E1F6 35%, #001676 55%, #00ECFD 55%, #001676 100%);
     --header-bg: #e9f6fc;
     --marron_header_bg: rgb(250, 201, 201);
-    --buttonColor: #fcae17;
+    --buttonColor: rgb(252, 174, 23);
     --headerAnchors: #061f48;
     /* --headerAnchors: #161623; */
 }
@@ -186,7 +186,7 @@ main {
     border-bottom: solid 10px var(--headerAnchors);
     border-bottom-left-radius: 20%;
     border-bottom-right-radius: 20%;
-    box-shadow: -85px 10px 0px 125px var(--headerAnchors);
+    box-shadow: -85px 10px 0px 255px var(--headerAnchors);
 }
 
 .text-aboutMe h3 {
@@ -278,7 +278,7 @@ h1[class="hy"] {
     position: absolute;
     align-items: flex-start;
     justify-content: flex-start;
-    height: 500px;
+    height: max-content;
     width: 100%;
     top: 75vh;
     background: var(--headerAnchors);
@@ -289,7 +289,7 @@ h1[class="hy"] {
     position: relative;
     display: flex;
     width: 100%;
-    height: max-content;
+    height: auto;
     align-items: center;
     justify-content: center;
     z-index: 96;
@@ -305,7 +305,8 @@ h1[class="hy"] {
     padding: 10px 0;
 }
 
-.moreAboutMe_title {
+.moreAboutMe_title,
+.resume-section_title {
     color: var(--buttonColor);
     margin: 0 auto;
     margin-bottom: 20px;
@@ -332,14 +333,17 @@ h1[class="hy"] {
 .moreAboutMe_details {
     display: flex;
     flex-direction: column;
-    width: 80%;
-    padding: 20px;
-    font-size: 17px;
+    width: 60%;
+    padding: 20px 50px 20px 20px;
+    font-size: 18px;
+    text-align: justify;
+    color: var(--header-bg);
+    letter-spacing: 1px;
 }
 
 .moreAboutMe_img {
-    width: 20%;
-    padding-left: 20px;
+    width: 40%;
+    padding: 20px 10px 20px 20px;
 }
 
 .image {
@@ -348,7 +352,7 @@ h1[class="hy"] {
     height: auto;
 }
 
-@media screen and (max-width:600px) {
+@media screen and (max-width:700px) {
     /*.text-aboutMe h3 {
         padding: 5px 0 0 2px;
     }*/
@@ -362,6 +366,7 @@ h1[class="hy"] {
         align-items: center;
         justify-content: center;
         font-size: small;
+        padding: 0 20px 20px 20px;
     }
     .moreAboutMe_img {
         height: auto;
@@ -384,11 +389,13 @@ h1[class="hy"] {
 }
 
 .hightlights {
-    margin-top: 20px;
+    margin: 20px 0 10px 0;
+    color: var(--buttonColor);
 }
 
 .list {
     padding-left: 50px;
+    list-style-type: disclosure-closed;
 }
 
 @keyframes bg-animation {
@@ -398,6 +405,120 @@ h1[class="hy"] {
     100% {
         background-position: right;
     }
+}
+
+
+/*********************** Resume section *************************/
+
+.resume-section {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 60px 20px 60px;
+    width: 100%;
+    height: 1000px;
+    background: var(--headerAnchors);
+    box-shadow: -10px -10px 0px 29px var(--headerAnchors);
+}
+
+.resume {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    overflow: hidden;
+    margin-top: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 20px 20px 50px rgb(0 0 0 / 50%);
+    border-top: 1px solid rgb(255, 255, 255, 0.5);
+    border-left: 1px solid rgb(255, 255, 255, 0.5);
+    overflow: hidden;
+    padding: 2px 0;
+    border-radius: 20px;
+}
+
+.resumeList {
+    border-right: solid 4px rgb(252, 174, 23);
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    box-shadow: 0px 0px 15px 10px var(--buttonColor);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    float: left;
+    width: 35%;
+    height: 100%;
+    list-style: none;
+    background-size: 20px;
+    z-index: 1;
+}
+
+.resumeList::before {
+    position: absolute;
+    content: '';
+    width: 80px;
+    height: 100%;
+    background: var(--buttonColor);
+    z-index: -1;
+    margin: 0 18px 0 0px;
+    /* box-shadow: inset 10px 10px 20px 0 rgb(255, 255, 255, 0.5); */
+    box-shadow: rgb(255 255 255 / 40%) 10px 5px 15px 5px inset;
+    margin: 0 18px 0 0px;
+    border-top: 1px solid rgb(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(87, 70, 70, 0.5);
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+
+.resumeELementTitle {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    /* padding-bottom: 20px; */
+    margin-bottom: 30px;
+    height: 100%;
+}
+
+#projectsTitle::before {
+    position: absolute;
+    content: '';
+    width: 30%;
+    height: 80px;
+    background: var(--buttonColor);
+    z-index: -2;
+    margin: 0 18px 0 0px;
+    border-radius: 80px;
+}
+
+
+/*
+.resumeELementTitle.tabActive::before {
+    position: absolute;
+    content: '';
+    width: 45%;
+    background: var(--buttonColor);
+    z-index: -1;
+    margin: 0 18px 0 0px;
+}
+*/
+
+.resumeELementTitle img {
+    margin: 0 30px 0 10px;
+}
+
+.Title {
+    margin-left: 10px;
+}
+
+.resume_details {
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+    cursor: pointer;
+    padding: 0 30px;
 }
 
 @media screen and (max-width:315.99px) {
@@ -574,4 +695,43 @@ h1[class="hy"] {
         }
     }
     /************** Welcome section  ******************/
+    /*.welcome {
+        display: flex;
+        flex-wrap: wrap-reverse;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        overflow: hidden;
+        padding: 10px 0;
+    }
+    .text-aboutMe {
+        width: 100%;
+        padding: 10px;
+        text-align: justify;
+    }
+    .illustration-aboutMe {
+        height: auto;
+        width: auto;
+        margin: 0 auto;
+    }
+    .aboutMe_img {
+        height: 200px;
+        width: 200px;
+        max-width: 100%;
+    }*/
+    .welcome {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+    .illustration-aboutMe {
+        display: block;
+        width: 35%;
+        height: auto;
+        position: relative;
+        margin: 0 auto;
+    }
 }
