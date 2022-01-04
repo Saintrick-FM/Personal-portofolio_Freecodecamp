@@ -433,7 +433,7 @@ h1[class="hy"] {
     border-top: 1px solid rgb(255, 255, 255, 0.5);
     border-left: 1px solid rgb(255, 255, 255, 0.5);
     overflow: hidden;
-    padding: 2px 0;
+    padding: 10px 0;
     border-radius: 20px;
 }
 
@@ -479,28 +479,36 @@ h1[class="hy"] {
     height: 100%;
 }
 
-#projectsTitle::before {
+#educationTitle::before,
+#workHistoryTitle::before,
+#codingSkillsTitle::before,
+#projectsTitle::before,
+#interestsTitle::before {
     position: absolute;
     content: '';
-    width: 30%;
+    width: 0%;
     height: 80px;
     background: var(--buttonColor);
     z-index: -2;
     margin: 0 18px 0 0px;
     border-radius: 80px;
+    transition: width 0.5s ease-in-out;
 }
 
-
-/*
-.resumeELementTitle.tabActive::before {
+#educationTitle.tabActive::before,
+#workHistoryTitle.tabActive::before,
+#codingSkillsTitle.tabActive::before,
+#projectsTitle.tabActive::before,
+#interestsTitle.tabActive::before {
     position: absolute;
     content: '';
-    width: 45%;
+    width: 30%;
+    height: 70px;
     background: var(--buttonColor);
-    z-index: -1;
-    margin: 0 18px 0 0px;
+    z-index: -2;
+    margin: 7px 18px 0 0px;
+    border-radius: 80px;
 }
-*/
 
 .resumeELementTitle img {
     margin: 0 30px 0 10px;
@@ -512,6 +520,7 @@ h1[class="hy"] {
 
 .resume_details {
     width: 65%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -519,7 +528,74 @@ h1[class="hy"] {
     height: auto;
     cursor: pointer;
     padding: 0 30px;
+    position: relative;
 }
+
+.resume_details .title {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+}
+
+.title h4 {
+    color: var(--buttonColor);
+    padding-left: 20px;
+}
+
+#education.contentActive,
+#work-history.contentActive,
+#coding-skills.contentActive,
+#projects.contentActive,
+#interests.contentActive {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+#education,
+#work-history,
+#coding-skills,
+#projects,
+#interests {
+    display: none;
+    position: absolute;
+    top: -150px;
+    transform: translateY(0px);
+    animation: resDet_in_animation 0.5s forwards;
+}
+
+@keyframes resDet_in_animation {
+    0% {
+        opacity: 0.1;
+        transform: translateY(500px);
+    }
+    25% {
+        opacity: 0.10;
+    }
+    50% {
+        opacity: 0.40;
+    }
+    75% {
+        opacity: 0.60;
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+
+/*
+.title img {
+    padding-left: 30px;
+}*/
 
 @media screen and (max-width:315.99px) {
     .nav__items h3 {
