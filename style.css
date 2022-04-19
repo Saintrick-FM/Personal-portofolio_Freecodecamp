@@ -77,7 +77,7 @@ header {
     color: var(--headerAnchors);
 }
 
-img {
+.nav__items img {
     height: 65px;
     width: 60px;
 }
@@ -421,12 +421,18 @@ h1[class="hy"] {
     box-shadow: -10px -10px 0px 29px var(--headerAnchors);
 }
 
+@media screen and (max-width:700px) {
+    .resume-section {
+        padding: 10px 20px 20px 20px;
+    }
+}
+
 .resume {
     display: flex;
     align-items: flex-start;
     justify-content: space-around;
     overflow: hidden;
-    margin-top: 50px;
+    /* margin-top: 50px; */
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     box-shadow: 20px 20px 50px rgb(0 0 0 / 50%);
@@ -435,6 +441,12 @@ h1[class="hy"] {
     overflow: hidden;
     padding: 10px 0;
     border-radius: 20px;
+}
+
+@media screen and (min-width:820px) {
+    .resume {
+        margin-top: 50px;
+    }
 }
 
 .resumeList {
@@ -544,6 +556,62 @@ h1[class="hy"] {
     padding-left: 20px;
 }
 
+.topNav {
+    display: none;
+}
+
+
+/*Resume section responsive*/
+
+.resumeELement {
+    height: 100%;
+}
+
+
+/*
+@media screen and (max-width:500px) {
+    img.resumeElement {
+        width: 5vw;
+    }
+}*/
+
+@media screen and (max-width:820px) {
+    .resumeList {
+        display: none
+    }
+    .resume_details {
+        width: 100%
+    }
+    .topNav {
+        display: flex;
+        width: 80%;
+        align-self: center;
+        justify-content: space-between;
+        align-items: baseline;
+        list-style: none;
+    }
+    img.resumeElement {
+        width: 10vw;
+        transition: transform 250ms ease-in;
+    }
+    img.resumeElement:hover {
+        background: var(--buttonColor);
+        transform: translateY(-10px) scale(1.09, 1.09);
+        border-radius: 20px;
+    }
+    /* #topNavEducation.navActive,
+    #topNavWorkHistory.navActive,
+    #topNavCodingSkills.navActive,
+    #topNavProjects.navActive,
+    #topNavInterests.navActive {
+        position: absolute;
+        background: var(--buttonColor);
+        margin: 7px 18px 0 0px;
+        border-radius: 80px;
+        /* transition: transform 250ms ease-in; 
+    }*/
+}
+
 #education.contentActive,
 #work-history.contentActive,
 #coding-skills.contentActive,
@@ -557,6 +625,7 @@ h1[class="hy"] {
     height: 100%;
     align-items: center;
     justify-content: center;
+    text-align: justify;
 }
 
 #education,
