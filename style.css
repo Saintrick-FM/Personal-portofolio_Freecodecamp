@@ -428,6 +428,7 @@ h1[class="hy"] {
 }
 
 .resume {
+    position: relative;
     display: flex;
     align-items: flex-start;
     justify-content: space-around;
