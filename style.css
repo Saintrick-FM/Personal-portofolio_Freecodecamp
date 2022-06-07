@@ -794,6 +794,118 @@ h1[class="hy"] {
 }
 
 
+/*Coding skills*/
+
+.coding-skills {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+}
+
+.coding-skills .technologies {
+    display: flex;
+    height: 60%;
+    width: inherit;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    align-items: baseline;
+}
+
+.left,
+.right {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+}
+
+.left {
+    width: 65%;
+}
+
+.right {
+    width: 35%;
+}
+
+.type {
+    display: inline;
+    height: 30px;
+    margin: 0 0 15px 15px;
+}
+
+.liste {
+    display: flex;
+    flex-direction: column;
+    width: inherit;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.technologie {
+    display: flex;
+    justify-content: space-between;
+    width: inherit;
+}
+
+.techno_name {
+    width: 25%;
+    border-radius: 11px;
+    background: linear-gradient(145deg, #1c3152, #213a61);
+    box-shadow: 9.91px 9.91px 11px #192c4a, -9.91px -9.91px 11px #25406c;
+    color: var(--header-bg);
+    padding: 5px;
+    transition: all 250ms ease-out;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.techno_name:hover {
+    box-shadow: inset 9.91px 9.91px 11px #192c4a, inset -9.91px -9.91px 15px #25406c;
+}
+
+.progress_bar {
+    display: block;
+    position: relative;
+    width: 75%;
+    height: 35px;
+    margin: 0 20px 0 20px;
+    border-radius: 44px;
+    background: linear-gradient(145deg, #1c3152, #213a61);
+    box-shadow: 5px 5px 10px #1b2e4e, -5px -5px 10px #233e68;
+    border: solid #1c3152 2px;
+    overflow: hidden;
+    /* text-align: end;*/
+}
+
+.progress_bar .bar {
+    position: absolute;
+    content: '';
+    height: 30px;
+    background-color: var(--buttonColor);
+    border-radius: 50px;
+    z-index: 1;
+    opacity: 0.80;
+    margin-top: 1px;
+}
+
+.percentage {
+    position: absolute;
+    right: 0;
+    height: 30px;
+    width: 40px;
+    border-radius: 50%;
+    border: 2px dotted var(--buttonColor);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: small;
+    z-index: 2;
+}
+
+
 /*
 @media screen and (min-width:600px) and (max-width:860px) {
     .main-projects {
