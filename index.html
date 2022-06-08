@@ -33,7 +33,7 @@
         </div>
 
     </header>
-    <main>
+    <main class="main">
 
         <section class="aboutMe" id="welcome-section">
 
@@ -119,10 +119,10 @@
                     <img class="resumeElement" src="img/icons8-group-of-projects-48.png" alt="">
                     <!-- <h4 class="Title">Projects</h4> -->
                 </li>
-                <li class="navElement" id="topNavInterests">
+                <!-- <li class="navElement" id="topNavInterests">
                     <img class="resumeElement" src="img/icons8-kill-time-48.png" alt="">
-                    <!-- <h4 class="Title">Interests</h4> -->
-                </li>
+                     <h4 class="Title">Interests</h4> 
+                </li> -->
 
             </div>
             <div class="resume">
@@ -524,18 +524,35 @@
 
                         </div>
                     </div>
-                    <!-- <div id="interests" class="interestsTitle">
-                        <div class="title">
-                            <img src="img/icons8-kill-time-48.png" alt="">
-                            <h4>Interests</h4>
-                        </div>
-                        <div class="content5">
-                          
-                        </div>
-                    </div> -->
+
                 </div>
             </div>
 
+        </section>
+
+        <section class="contact-section">
+
+            <div class="left_part">
+                <h3>Get in touch</h3>
+            </div>
+            <div class="right_part">
+                <form id="survey-form" action="">
+                    <div class="label_and_input">
+                        <label for="name" id="name-label" class="label">Name</label>
+                        <input id="name" name="name" placeholder="Enter your name" required type="text">
+                    </div>
+
+                    <div class="label_and_input">
+                        <label for="email" id="email-label" class="label">Email</label>
+                        <input id="email" name="email" placeholder="Enter your email " required type="email">
+                    </div>
+                    <div class="label_and_input ">
+                        <label for="comments " class="label ">Any comments or suggestions?</label>
+                        <textarea name="comments " id="comments " required cols="30 " rows="10 "></textarea>
+                    </div>
+                    <button type="submit " id="submit "> Submit</button>
+                </form>
+            </div>
 
         </section>
 
