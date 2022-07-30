@@ -1,3 +1,5 @@
+
+
 :root {
   --myGradient: radial-gradient(
       65% 100% at 50% 0%,
@@ -89,6 +91,7 @@ html {
 
 body {
   min-height: 100%;
+  background: var(--header-bg);
 }
 
 header {
@@ -204,7 +207,7 @@ a {
 
 main {
   position: relative;
-  top: 70px;
+  top: 50px;
   right: 0;
   left: 0;
   background: var(--headerAnchors);
@@ -643,6 +646,8 @@ padding: 5px 0 0 2px;
 
 .title h3 {
   color: var(--buttonColor);
+      font-size: large;
+    margin-left: 5px;
 }
 
 .topNav {
@@ -944,12 +949,12 @@ border-left: 1px solid rgb(255, 255, 255, 0.5); */
   margin-bottom: 15px;
   text-align: center;
 }
-
+/*
 #wordpress,
 #drf {
   font-size: 0.8em;
   width: auto;
-}
+}*/
 
 .techno_name:hover {
   box-shadow: inset 9.91px 9.91px 11px #192c4a,
@@ -1619,3 +1624,4 @@ right: 6px;
     }
   }
 }
+
