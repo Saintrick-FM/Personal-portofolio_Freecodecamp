@@ -9,6 +9,8 @@ HTML
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
     <title>My Portofolio</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -451,7 +453,7 @@ HTML
                                         </a>
                                         <button type="submit "> 
                                             <span></span>
-                                             <img src="./img/icons8-view-more-24.png" alt="">
+                                             <!-- <img src="./img/icons8-view-more-24.png" alt=""> -->
                                         </button>
                                     </div>
 
@@ -473,7 +475,7 @@ HTML
                                         </a>
                                         <button type="submit "> 
                                             <span></span>
-                                             <img src="./img/icons8-view-more-24.png" alt="">
+                                             <!-- <img src="./img/icons8-view-more-24.png" alt=""> -->
                                         </button>
                                     </div>
 
@@ -495,7 +497,7 @@ HTML
                                         </a>
                                         <button type="submit "> 
                                             <span></span>
-                                             <img src="./img/icons8-view-more-24.png" alt="">
+                                             <!-- <img src="./img/icons8-view-more-24.png" alt=""> -->
                                         </button>
                                     </div>
 
@@ -520,7 +522,7 @@ HTML
                                         </a>
                                         <button type="submit "> 
                                             <span></span>
-                                             <img src="./img/icons8-view-more-24.png" alt="">
+                                             <!-- <img src="./img/icons8-view-more-24.png" alt=""> -->
                                         </button>
                                     </div>
 
@@ -543,10 +545,9 @@ HTML
                                         </a>
                                         <button type="submit "> 
                                             <span></span>
-                                             <img src="./img/icons8-view-more-24.png" alt="">
+                                             <!-- <img src="./img/icons8-view-more-24.png" alt=""> -->
                                         </button>
                                     </div>
-
 
                                 </div>
                             </div>
@@ -559,7 +560,6 @@ HTML
                                     <div class="project_moreDetails">
                                         <a target="blank" href="https://saintrick-fm.github.io/my_portofolio/">
                                             <button type="submit">
-                                           
                                                 <span class="english">Pending</span>
                                                 <span class="french">En cours</span>
                                            <img src="./img/icons8-github-24.png" alt="">
@@ -567,7 +567,7 @@ HTML
                                         </a>
                                         <button type="submit "> 
                                             <span></span>
-                                             <img src="./img/icons8-view-more-24.png" alt="">
+                                             <!-- <img src="./img/icons8-view-more-24.png" alt=""> -->
                                         </button>
                                     </div>
 
@@ -598,7 +598,7 @@ HTML
                 </div>
             </div>
             <div class="section_facebook">
-                <img src="img/icons8-view-more-24.png" alt="">
+                <!-- <img src="img/icons8-view-more-24.png" alt=""> -->
                 <div class="media">
                     <h5>Facebook</h5>
                     <p>Malonga Francy Saintrick</p>
@@ -626,23 +626,31 @@ HTML
             <div class="none1"></div>
             <div class="none2"></div>
 
-            <form class="contact_form" id="survey-form" action="">
+            <form onsubmit="sendEmail(); reset(); return false" class="contact_form" id="survey-form" action="">
                 <div class="label_and_input">
-                    <label for="name" id="name-label" class="label english">Name</label>
-                    <label for="name" id="name-label" class="label french">Nom</label>
-                    <input id="name" class="english" name="name" placeholder="Enter your name" required type="text">
-                    <input id="name" class="french" name="name" placeholder="Entrer votre nom" required type="text">
+                    <label  id="name-label" class="label english">Name</label>
+                    <label  id="name-label" class="label french">Nom</label>
+                    <input id="fullName" class="english" name="fullName" placeholder="Enter your name"  type="text">
+                    <input id="nom" class="french" name="nom" placeholder="Entrer votre nom" type="text">
+                </div>
+                <div class="label_and_input">
+                    <label  id="num-label" class="label english">Number</label>
+                    <label  id="num-label" class="label french">Numéro</label>
+                    <input id="number" class="english" name="number" placeholder="Enter your number" type="number">
+                    <input id="numero" class="french" name="numero" placeholder="Entrer votre numéro" type="number">
                 </div>
 
                 <div class="label_and_input">
-                    <label for="email" id="email-label" class="label">Email</label>
-                    <input id="email" class="english" name="email" placeholder="Enter your email " required type="email">
-                    <input id="email" class="french" name="email" placeholder="Enter your email " required type="email">
+                    <label  id="email-label-english" class="label english">Email</label>
+                    <label  id="email-label-french" class="label french">Email</label>
+                    <input id="email" class="english" name="email" placeholder="Enter your email " type="email">
+                    <input id="mail" class="french" name="mail" placeholder="Entrez votre adresse mail" type="email">
                 </div>
                 <div class="label_and_input ">
-                    <label for="comments " class="label english">Any comments or suggestions?</label>
-                    <label for="comments " class="label french">Eventuelles Suggestions ?</label>
-                    <textarea name="comments " id="comments " required cols="30 " rows="10 "></textarea>
+                    <label  class="label english">Any comments or suggestions?</label>
+                    <label class="label french">Message ou suggestions</label>
+                    <textarea name="comments" id="comments" class="comments english" ></textarea>
+                    <textarea name="commentaires" id="commentaires" class="comments french"></textarea>
                 </div>
                 <button type="submit " class="submit_form english" id="submit"> Submit</button>
                 <button type="submit " class="submit_form french" id="submit"> Envoyer</button>
@@ -657,6 +665,9 @@ HTML
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/TextPlugin.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/EasePack.min.js"></script>
     <script src="main.js"></script>
+    <script src=
+    "https://smtpjs.com/v3/smtp.js">
+  </script>
 <!--     
     <script scr="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script> -->
 </body>
