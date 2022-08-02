@@ -91,7 +91,7 @@ body {
   min-height: 100%;
 }
 
-header {
+#navbar{
   /* background: #ddd; 
 background: var(--myOriginalGradient);
 background-blend-mode: soft-light, screen, overlay, overlay, difference, overlay, normal;
@@ -730,7 +730,7 @@ padding-left: 30px;
   justify-content: space-evenly;
 }
 
-.project_column {
+.project-tile {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -751,7 +751,7 @@ border-left: 1px solid rgb(255, 255, 255, 0.5); */
   /*************Glassmorphism*****************/
 }
 
-.project_column:hover {
+.project-tile:hover {
   transform: scale(1.05, 1.05);
 }
 
@@ -766,12 +766,12 @@ border-left: 1px solid rgb(255, 255, 255, 0.5); */
   position: relative;
 }
 
-.project_column figure {
+.project-tile figure {
   width: 100%;
   display: contents;
 }
 
-.project_column figure img {
+.project-tile figure img {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   box-shadow: inset 20px 20px 50px rgba(0, 0, 0, 0.5);
@@ -1365,16 +1365,16 @@ font-size: 0.93rem;
   .main-projects {
     width: max-content;
   }
-  .project_column {
+  .project-tile {
     padding: 14px;
   }
-  .project_column figure {
+  .project-tile figure {
     width: 85%;
     max-height: 130px;
     display: flex;
     justify-content: center;
   }
-  .project_column figure img {
+  .project-tile figure img {
     width: 65%;
   }
   .technologies {
@@ -1424,7 +1424,7 @@ right: 6px;
     }
   }
   @media screen and (max-width: 680px) {
-    header {
+    #navbar{
       position: fixed;
       width: 100%;
       padding: 0 2px 0 10px;
@@ -1627,3 +1627,4 @@ right: 6px;
     }
   }
 }
+
