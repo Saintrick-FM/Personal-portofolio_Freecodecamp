@@ -32,8 +32,31 @@ const screenHeight = `${screen.height}`;
 const usrlang = navigator.language
 || navigator.userLanguage;
 checkBrowserLanguage(usrlang)
-textAutoWriting()
-responsiveElements(screenWidth); // Displaying mobile design on the first loading
+// checking if all images in the DOM are loaded before calling resizeElements function
+let imgList = document.images;
+let len = imgList.length;
+let imgCounter = 0;
+
+[].forEach.call(imgList, function (img) {
+  if (img.complete) {
+    incrementImgCounter();
+  }
+  else {
+    img.addEventListener('load', incrementImgCounter, false);
+  }
+});
+
+function incrementImgCounter() {
+  imgCounter++;
+  if (imgCounter === len) {
+    console.log('All images loaded!');
+    responsiveElements(screenWidth);
+    textAutoWriting()
+
+  }
+}
+
+ // Displaying mobile design on the first loading
 
 function checkBrowserLanguage(usrlang){
   	
