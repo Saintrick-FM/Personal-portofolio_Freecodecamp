@@ -57,7 +57,7 @@ if(usrlang.includes('fr')){
 function adjustMainWelcomeResumeContactSections(screenWidth) {
   // Adjusting textAbout-Me top size
   let welcomeSIze = aboutMe_img.clientHeight.toString().concat("px");
-  
+  console.log("aboutMe_img.clientHeight 😻 "+aboutMe_img.clientHeight)
   welcome.style.height = welcomeSIze;
   
   console.log("adjustMainWelcomeResumeContactSections " + welcomeSIze+ "\nscreenWidth "+screenWidth);
